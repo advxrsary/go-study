@@ -7,6 +7,7 @@ import (
 	"os"
 )
 
+// non-efficent way to do it
 func main() {
 	s, sep := "", ""
 	for _, arg := range os.Args[1:] {
