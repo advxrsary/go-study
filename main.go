@@ -7,18 +7,11 @@ import (
 	"os"
 )
 
-// func to decrement two numbers from command line arguments
-func decrement(a []string, b []string) int {
-	var x, y int
-	fmt.Sscanf(a[0], "%d", &x)
-	fmt.Sscanf(b[0], "%d", &y)
-	return x - y
-}
-
 func main() {
-	if len(os.Args) < 2 {
-		fmt.Printf("Usage: main.go <number1> <number2>")
-		return
+	s, sep := "", ""
+	for _, arg := range os.Args[1:] {
+		s += sep + arg
+		sep = " "
 	}
-	fmt.Println(decrement(os.Args[1:], os.Args[2:]))
+	fmt.Println(s)
 }
