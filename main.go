@@ -2,12 +2,23 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
-func add(x int, y int) int {
-	return x + y
+// func to decrement two numbers from command line arguments
+func decrement(a []string, b []string) int {
+	var x, y int
+	fmt.Sscanf(a[0], "%d", &x)
+	fmt.Sscanf(b[0], "%d", &y)
+	return x - y
 }
 
 func main() {
-	fmt.Println(add(42, 13))
+	if len(os.Args) < 2 {
+		fmt.Printf("Usage: main.go <number1> <number2>")
+		return
+	}
+	fmt.Println(decrement(os.Args[1:], os.Args[2:]))
 }
