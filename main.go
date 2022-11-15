@@ -1,8 +1,8 @@
 package main
 
 import (
-	"workspace/echo"
-	"workspace/loading_anim"
+	"go-study/echo"
+	"go-study/loading_anim"
 )
 
 func main() {
