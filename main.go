@@ -31,7 +31,7 @@ func echo3() {
 
 // efficent way to do it
 func main() {
-	fmt.Println("name: ", os.Args[0])
+	fmt.Println("name:", os.Args[0])
 
 	start := time.Now()
 	echo1()
