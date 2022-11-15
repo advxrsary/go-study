@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	loading_anim.LoadAnim(2)
+	loading_anim.LoadAnim(50)
 	echo.Echo2()
 
 }

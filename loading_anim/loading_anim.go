@@ -28,6 +28,6 @@ func HideLoading() {
 
 func LoadAnim(seconds time.Duration) {
 	go ShowLoading()
-	time.Sleep(time.Second * seconds)
+	time.Sleep(time.Millisecond * seconds)
 	HideLoading()
 }
