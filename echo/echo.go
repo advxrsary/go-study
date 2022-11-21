@@ -6,13 +6,13 @@ import (
 	"strings"
 )
 
-func Echo1() {
+func Echo1() []string {
 	var s, sep string
 	for i := 1; i < len(os.Args); i++ {
 		s += sep + os.Args[i]
 		sep = " "
 	}
-	fmt.Println("\nvars:", s)
+	return strings.Split(s, " ")
 }
 
 func Echo2() {
