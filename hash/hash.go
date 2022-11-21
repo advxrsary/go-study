@@ -23,21 +23,22 @@ import (
 )
 
 func CurlGetIp() string {
+	var ip string
 	easy := curl.EasyInit()
 	defer easy.Cleanup()
 
 	easy.Setopt(curl.OPT_URL, "http://ifconfig.me/ip")
-	easy.Setopt(curl.OPT_FOLLOWLOCATION, 1)
-
-	var ip string
-	easy.Setopt(curl.OPT_WRITEDATA, &ip)
-
+	easy.Setopt(curl.OPT_WRITEFUNCTION, func(ptr []byte, userdata interface{}) bool {
+		ip = string(ptr)
+		return true
+	})
 	easy.Perform()
 	return ip
 }
 
-func GenerateAvatar(ip string) {
+func GenerateAvatar() {
 	// create a new image
+	ip := CurlGetIp()
 	img := image.NewRGBA(image.Rect(0, 0, 300, 300))
 
 	// generate background color
