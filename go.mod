@@ -1,4 +1,4 @@
-module go-study
+module github.com/advxrsary/go-study
 
 go 1.19
 
