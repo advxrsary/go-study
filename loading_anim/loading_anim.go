@@ -40,5 +40,4 @@ func HideLoading() {
 func LoadAnim(duration int) {
 	Animation(duration)
 	HideLoading()
-	fmt.Println("./avatar.png generated")
 }
