@@ -1,11 +1,9 @@
 package main
 
 import (
-	"go-study/hash"
-	"go-study/loading_anim"
+	"fmt"
 )
 
 func main() {
-	loading_anim.LoadAnim(200)
-	hash.GenerateAvatar()
+	fmt.Println("Hello, world!")
 }
